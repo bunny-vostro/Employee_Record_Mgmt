@@ -1,0 +1,12 @@
+.banner {
+    background-color: #0066d9;
+    display: flex;
+    color: white;
+    padding: 5px 15px;
+    margin:0 0 15px 0;
+}
+
+.link-button {
+    color: #0066d9;
+    cursor: pointer;
+}

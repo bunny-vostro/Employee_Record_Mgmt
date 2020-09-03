@@ -1,0 +1,36 @@
+.badge-space {
+    margin: 0 10px 0 0;
+}
+
+.close-badge {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.banner {
+    background-color: #0066d9;
+    display: flex;
+    color: white;
+    padding: 5px 0;
+}
+
+.form {
+    padding: 20px;
+}
+
+.mg-rt-15 {
+    margin-right: 15px;
+}
+
+.icon {
+    cursor: pointer;
+    margin: 0 20px 0 0
+}
+
+.techStack {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: row;
+    justify-content: space-between;
+}

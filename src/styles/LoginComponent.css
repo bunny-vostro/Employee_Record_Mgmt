@@ -1,0 +1,13 @@
+.login-main-window {
+    margin: 20% auto;
+    border: solid 3px #0069d9;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.avatar {
+    height: 100px;
+    background: #0069d9;
+    width: 96px;
+    padding: 10px;
+}
