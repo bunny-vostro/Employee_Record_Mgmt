@@ -114,7 +114,7 @@ function EmployeesDetails(props) {
             </div>}
             <div className={["form-group"]}>
                 <label htmlFor="name">Name:</label>
-                <input type="text" ref={nameRef} className={["form-control"]} id="name"  placeholder="Enter Employee Name" name="name" />
+                <input type="text" ref={nameRef} className={["form-control"]} readonly= {id} id="name"  placeholder="Enter Employee Name" name="name" />
             </div>
             <div className={["form-group"]}>
                 <label htmlFor="tech_stack">Assign Skill:</label>
