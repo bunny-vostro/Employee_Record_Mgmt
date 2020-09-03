@@ -22,16 +22,6 @@ const ModalCard = styled.div`
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 `; 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background: transparent;
-  padding: 10px;
-  &:hover {    
-    cursor: pointer;
-  }`; 
 const Background = styled.div`
   position: absolute;
   width: 100%;
@@ -63,12 +53,14 @@ export function Portal ({ children }) {
 };
 
 const Modal = ({ children }) => (  
- <Portal>
-    <ModalWrapper>       
-        <ModalCard>   
-           {children}
-        </ModalCard>      
-    </ModalWrapper>    
- </Portal>
+<Background>
+    <Portal>
+        <ModalWrapper>       
+            <ModalCard>   
+            {children}
+            </ModalCard>      
+        </ModalWrapper>    
+    </Portal>
+</Background>
 ); 
 export default Modal; 

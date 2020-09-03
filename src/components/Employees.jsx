@@ -6,6 +6,7 @@ import "../styles/Employees.css";
 import { GET_EMPLOYEES, GET_EMPLOYEES_SUCESSED, GET_EMPLOYEES_FAILED, DELETE_EMPLOYEE, DELETE_EMPLOYEE_SUCESSED } from "../constants/constant";
 import { getEmployees } from "../api";
 import Grid from "./List";
+import Loader from './Loader';
 
 function EmployeeList() {
     const history = useHistory();
@@ -53,6 +54,7 @@ function EmployeeList() {
     }
 
     return <div>
+        {state.loading && <Loader />}
         <div className={["banner"]}>
             <h2>Employee Dashboard </h2>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useHistory, withRouter } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ADD_EMPLOYEE, ADD_EMPLOYEE_SUCCESSED, GET_EMPLOYEE_DETAIL, GET_EMPLOYEE_DETAIL_FAILED, GET_EMPLOYEE_DETAIL_SUCESSED, UPDATE_EMPLOYEE, UPDATE_EMPLOYEE_SUCESSED } from "../constants/constant";
 import { useState } from "react";
 import { useRef } from "react";
@@ -8,6 +8,7 @@ import { getEmployeeInfo } from "../api";
 
 import "../styles/EmployeeDetails.css";
 import { useEffect } from "react";
+import Loader from "./Loader";
 
 const backButton = require("../images/back-button.png");
 
@@ -19,6 +20,8 @@ function EmployeesDetails(props) {
     const nameRef = useRef(null);
     const skillRef = useRef(null);
     const projectRef = useRef(null);
+
+    const loader = useSelector(state => state.reducer.loading);
 
     const [techStack, setTechStack] = useState([]);
 
@@ -99,6 +102,7 @@ function EmployeesDetails(props) {
     }
 
     return <div>
+        {loader && <Loader />}
         <div className={["banner"]}>
             <h2> {id ? "Edit Employee" : "Create Employee"} </h2>
         </div>
