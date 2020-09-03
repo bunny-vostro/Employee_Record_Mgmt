@@ -1,11 +1,12 @@
-import { GET_EMPLOYEES_SUCESSED, GET_EMPLOYEES_FAILED, GET_EMPLOYEES, ADD_EMPLOYEE, ADD_EMPLOYEE_SUCCESSED, GET_EMPLOYEE_DETAIL_SUCESSED, GET_EMPLOYEE_DETAIL, DELETE_EMPLOYEE_SHOW_MODAL, DELETE_EMPLOYEE_HIDE_MODAL, DELETE_EMPLOYEE, DELETE_EMPLOYEE_SUCESSED, DELETE_EMPLOYEE_FAILED, UPDATE_EMPLOYEE, UPDATE_EMPLOYEE_SUCESSED, UPDATE_EMPLOYEE_FAILED, ID} from "./../constants/constant";
+import { GET_EMPLOYEES_SUCESSED, GET_EMPLOYEES_FAILED, GET_EMPLOYEES, ADD_EMPLOYEE, ADD_EMPLOYEE_SUCCESSED, GET_EMPLOYEE_DETAIL_SUCESSED, GET_EMPLOYEE_DETAIL, DELETE_EMPLOYEE_SHOW_MODAL, DELETE_EMPLOYEE_HIDE_MODAL, DELETE_EMPLOYEE, DELETE_EMPLOYEE_SUCESSED, DELETE_EMPLOYEE_FAILED, UPDATE_EMPLOYEE, UPDATE_EMPLOYEE_SUCESSED, UPDATE_EMPLOYEE_FAILED, ID, LOGIN, LOGOUT} from "./../constants/constant";
 import cloneDeep from "lodash/cloneDeep";
 
 let initialState = {
   loading: false,
   employees: [],
   showModel: false,
-  employeeIdCost: 100
+  employeeIdCost: 100,
+  isLogin: true
 };
 
 function reducer(state = initialState, action){
@@ -13,6 +14,12 @@ switch (action.type) {
     case GET_EMPLOYEE_DETAIL:
     case GET_EMPLOYEES:
       return {...state, loading: true};
+
+    case LOGIN:
+      return {...state, isLogin: true};
+    
+    case LOGOUT:
+      return {...state, isLogin: false};
 
     case GET_EMPLOYEE_DETAIL_SUCESSED:
     case GET_EMPLOYEES_SUCESSED: 
